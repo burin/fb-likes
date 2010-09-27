@@ -46,10 +46,10 @@ get '/friends/:id' do
 end
 
 get '/friends/:id/compare' do
-  @my_likes = @graph.get_connections('me', 'likes').collect { |like| like['id'] }
-  @friend_likes = @graph.get_connections(params[:id], 'likes').collect { |like| like['id'] }
+  @my_likes = Hashie::Mash.new({"data"=>@graph.get_connections('me', 'likes')}).data
+  @friend_likes = Hashie::Mash.new({"data"=>@graph.get_connections(params[:id], 'likes')}).data
   
-  intersection = @my_likes & @friend_likes
+  intersection = @my_likes.collect { |like| like['id'] } & @friend_likes.collect { |like| like['id'] }
   @likes = (Hashie::Mash.new({"data"=>@graph.get_objects(intersection)}).data unless intersection.empty?) || []
-  erb :likes
+  erb :compare
 end

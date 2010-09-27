@@ -1,0 +1,32 @@
+<div class="your_likes">
+<h2>Your likes</h2>
+<% if @my_likes.empty? %>
+	<p>No Likes :(</p>
+<% else %>
+	<% @my_likes.each do |like| %>
+		<p><%= like.name %></p>
+	<% end %>
+<% end %>
+</div>
+
+<div class="their_likes">
+<h2>Their likes</h2>
+<% if @friend_likes.empty? %>
+	<p>No Likes :(</p>
+<% else %>
+	<% @friend_likes.each do |like| %>
+		<p><%= like.name %></p>
+	<% end %>
+<% end %>
+</div>
+
+<div class="shared_likes">
+<h2>Shared likes</h2>
+<% if @likes.empty? %>
+	<p>No Likes :(</p>
+<% else %>
+	<% @likes.each do |like| %>
+		<p><%= like[1].name %></p>
+	<% end %>
+<% end %>
+</div>

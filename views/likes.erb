@@ -2,6 +2,6 @@
 	<p>No Likes :(</p>
 <% else %>
 	<% @likes.each do |like| %>
-		<p><%= like[1].name %></p>
+		<p><%= like.name %></p>
 	<% end %>
 <% end %>

@@ -4,10 +4,12 @@ $ninesixty-columns: 12;
   @include grid-container;
 }
 
-	#header, #main, #footer, .friend { @include grid-unit-base;}
+	#header, #main, #footer, .friend, .your_likes, .their_likes, .shared_likes { @include grid-unit-base;}
 	
 	#header, #main, #footer { @include grid-width(12); }
 	.friend { @include grid-width(6); @include alpha; @include omega; }
-	
+	.your_likes, .their_likes, .shared_likes { @include grid_width(4); }
+	.your_likes { @include alpha; }
+	.shared_likes { @include omega; }
 	#main {
 	}
