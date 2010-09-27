@@ -17,7 +17,10 @@
 	<p>No Shared Likes :(</p>
 <% else %>
 	<% @likes.each do |like| %>
-		<p><%= like[1].name %></p>
+	<div class="like">
+		<div class="photo"><img src="http://graph.facebook.com/<%= like[1].id %>/picture" height="50" width="50"></div>
+		<div class="details"><h4><%= like[1].name %></h4></div>
+	</div>
 	<% end %>
 <% end %>
 </div>
@@ -27,7 +30,10 @@
 	<p>No Likes :(</p>
 <% else %>
 	<% @friend_likes.each do |like| %>
-		<p><%= like.name %></p>
+	<div class="like">
+		<div class="photo"><img src="http://graph.facebook.com/<%= like.id %>/picture" height="50" width="50"></div>
+		<div class="details"><h4><%= like.name %></h4></div>
+	</div>
 	<% end %>
 <% end %>
 </div>
