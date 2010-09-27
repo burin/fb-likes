@@ -1,7 +1,14 @@
+<div class="your_likes">
+<h2>Your Likes</h2>
 <% if @likes.empty? %>
-	<p>No Likes :(</p>
+	<p>No Likes to show :(</p>
 <% else %>
 	<% @likes.each do |like| %>
-		<p><%= like.name %></p>
+	<div class="like">
+		<div class="photo"><img src="http://graph.facebook.com/<%= like[1].id %>/picture" height="50" width="50"></div>
+		<div class="details"><h4><%= like[1].name %></h4></div>
+	</div>
 	<% end %>
 <% end %>
+<p><a href="/friends" class="button xs">Back to Friends</a></p>
+</div>
