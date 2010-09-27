@@ -36,7 +36,7 @@ get '/likes' do
 end
 
 get '/friends' do
-  @friends = Hashie::Mash.new({"data"=>@graph.get_connections('me','friends')}).data.sort {|k,v| a.name <=> b.name }
+  @friends = Hashie::Mash.new({"data"=>@graph.get_connections('me','friends')}).data.sort_by {|friend| friend.name }
   erb :friends
 end
 
