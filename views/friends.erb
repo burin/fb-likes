@@ -1,3 +1,12 @@
+<h2>Select a friend to compare your likes</h2>
 <% @friends.each do |friend| %>
-	<p><a href="/friends/<%= friend.id %>"><%= friend.name %></a> | <a href="/friends/<%= friend.id %>/compare">compare likes</a></p>
+<div class="friend" data-url="/friends/<%= friend.id %>/compare">
+	<div class="photo">
+			<a href="/friends/<%= friend.id %>/compare"><img src="http://graph.facebook.com/<%= friend.id %>/picture" height="50" width="50"></a>
+	</div>
+	<div class="details">
+		<h4><a href="/friends/<%= friend.id %>/compare"><%= friend.name %></a></h4>
+		<a class="button xs compare" href="/friends/<%= friend.id %>/compare">compare likes</a>
+	</div>
+</div>
 <% end %>

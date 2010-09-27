@@ -1,3 +1,27 @@
 @import "reset";
 @import "text";
 @import "layout";
+@import "buttons";
+@import "compass/utilities";
+
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+body { background: #F0F0F0; color: #666; border-top: 2px solid #FF5E99; }
+h1 { margin-top: -20px; font-family:"Corinthian W01 Bold"; font-size: 75px; line-height: 1; text-shadow: #fff 0 1px 0;}
+h1 span { font-size: 30px; }
+a { text-decoration: none; color: #333; text-shadow: #fff 0 1px 0;}
+a:hover { color: #666; -webkit-transition: color 0.25s linear;}
+a:active {
+position: relative;
+top: 1px;
+}
+
+h2 { text-shadow: #fff 0 1px 0; }
+
+div.friend { @include pie-clearfix; margin: 0 0 15px;}
+	.friend h4 { margin: -5px 0 0; width: 240px; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-shadow: #fff 0 1px 0;}
+
+div.photo { float: left; margin: 0 10px 0 0; }
+div.details { float: left; }
+a.compare { font-size: 12px; margin: 0;}

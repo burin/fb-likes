@@ -1,13 +1,13 @@
 @import "960/grid";
-$ninesixty-columns: 16;
+$ninesixty-columns: 12;
 #page {
   @include grid-container;
 }
 
-	#header, #body, #footer { @include grid-unit-base;}
+	#header, #main, #footer, .friend { @include grid-unit-base;}
 	
-	#header, #body, #footer { @include grid-width(16); }
-
+	#header, #main, #footer { @include grid-width(12); }
+	.friend { @include grid-width(6); @include alpha; @include omega; }
 	
-	#body {
+	#main {
 	}

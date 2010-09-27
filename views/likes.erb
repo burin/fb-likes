@@ -1,3 +1,7 @@
-<% @likes.each do |like| %>
-	<p><%= like %></p>
+<% if @likes.empty? %>
+	<p>No Likes :(</p>
+<% else %>
+	<% @likes.each do |like| %>
+		<p><%= like[1].name %></p>
+	<% end %>
 <% end %>
