@@ -1,6 +1,6 @@
 <h2>Select a friend to compare your likes</h2>
 <% @friends.each do |friend| %>
-<div class="friend" data-url="/friends/<%= friend.id %>/compare">
+<div class="friend">
 	<div class="photo">
 			<a href="/friends/<%= friend.id %>/compare"><img src="http://graph.facebook.com/<%= friend.id %>/picture" height="50" width="50"></a>
 	</div>

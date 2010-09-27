@@ -4,14 +4,17 @@
 	<p>No Likes :(</p>
 <% else %>
 	<% @my_likes.each do |like| %>
-		<p><%= like.name %></p>
+	<div class="like">
+		<div class="photo"><img src="http://graph.facebook.com/<%= like.id %>/picture" height="50" width="50"></div>
+		<div class="details"><h4><%= like.name %></h4></div>
+	</div>
 	<% end %>
 <% end %>
 </div>
 <div class="shared_likes">
 <h2>Shared likes</h2>
 <% if @likes.empty? %>
-	<p>No Likes :(</p>
+	<p>No Shared Likes :(</p>
 <% else %>
 	<% @likes.each do |like| %>
 		<p><%= like[1].name %></p>

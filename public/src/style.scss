@@ -19,8 +19,9 @@ top: 1px;
 
 h2 { text-shadow: #fff 0 1px 0; }
 
-div.friend { @include pie-clearfix; margin: 0 0 15px;}
-	.friend h4 { margin: -5px 0 0; width: 240px; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-shadow: #fff 0 1px 0;}
+div.friend, div.like { @include pie-clearfix; margin: 0 0 15px;}
+	.friend h4, .like h4 { margin: -5px 0 0; width: 240px; text-overflow:ellipsis; white-space:nowrap; overflow: hidden; text-shadow: #fff 0 1px 0;}
+
 
 div.photo { float: left; margin: 0 10px 0 0; }
 div.details { float: left; }
