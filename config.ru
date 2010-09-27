@@ -2,6 +2,4 @@ Dir["#{File.expand_path(File.dirname(__FILE__))}/vendor/*/lib"].each { |path| $:
 
 require 'app'
 
-set :environment, :development
-
 run Sinatra::Application
