@@ -1,0 +1,6 @@
+<% if logged_in? %>
+	<a href="/friends">Friends!</a>
+	<a href="/likes">My Likes!</a>
+<% else %>
+	<fb:login-button size="xlarge" length="long" autologoutlink="true" onlogin="window.location.reload()" perms="user_likes,friends_likes"></fb:login-button> 
+<% end %>
