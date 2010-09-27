@@ -15,6 +15,7 @@
 <h2>Shared likes</h2>
 <% if @likes.empty? %>
 	<p>No Shared Likes :(</p>
+	<p><a href="/friends" class="button xs">Back to Friends</a></p>
 <% else %>
 	<% @likes.each do |like| %>
 	<div class="like">
