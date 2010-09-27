@@ -5,8 +5,8 @@
 <% else %>
 	<% @likes.each do |like| %>
 	<div class="like">
-		<div class="photo"><img src="http://graph.facebook.com/<%= like[1].id %>/picture" height="50" width="50"></div>
-		<div class="details"><h4><%= like[1].name %></h4></div>
+		<div class="photo"><img src="http://graph.facebook.com/<%= like.id %>/picture" height="50" width="50"></div>
+		<div class="details"><h4><%= like.name %></h4></div>
 	</div>
 	<% end %>
 <% end %>
