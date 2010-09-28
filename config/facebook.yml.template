@@ -1,0 +1,3 @@
+ # config/facebook.yml
+app_id: your_app_id
+secret_key: your_app_secret

@@ -2,9 +2,13 @@ require 'rubygems'
 require 'sinatra'
 require 'koala'
 require 'hashie'
+require "yaml"
 
-$app_id = '117628591626737'
-$app_secret = '2f84d6ec45ca373b26d8994e743d6b0e'
+module Config
+  config = YAML.load(ERB.new(File.read("config/facebook.yml")).result)
+  APP_ID = config['app_id']
+  SECRET = config['secret_key'] 
+end
 
 before do
   return redirect "/" unless logged_in? || request.path_info = '/'
@@ -16,8 +20,8 @@ helpers do
   end
 
   def facebook_user
-    @facebook_user ||= if request.cookies['fbs_'+$app_id]
-      Hashie::Mash.new(Koala::Facebook::OAuth.new($app_id, $app_secret).get_user_info_from_cookies(request.cookies))
+    @facebook_user ||= if request.cookies['fbs_'+Config::APP_ID.to_s]
+      Hashie::Mash.new(Koala::Facebook::OAuth.new(Config::APP_ID.to_s, Config::SECRET.to_s).get_user_info_from_cookies(request.cookies))
     end
   end
 
