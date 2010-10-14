@@ -5,9 +5,16 @@ require 'hashie'
 require 'yaml'
 
 module Config
-  config = YAML.load(ERB.new(File.read("config/facebook.yml")).result)
-  APP_ID = config['app_id']
-  SECRET = config['secret_key'] 
+  # If a facebook.yml file exists, use the key, secret key, and bucket values from there.
+  # Otherwise, pull them from the environment.
+  if File.exists?("config/facebook.yml")
+    fb_config = YAML.load_file("config/facebook.yml")
+    APP_ID = fb_config['app_id']
+    SECRET = fb_config['secret_key']
+  else
+    APP_ID = ENV['FB_APP_ID']
+    SECRET = ENV['FB_SECRET']
+  end
 end
 
 before do

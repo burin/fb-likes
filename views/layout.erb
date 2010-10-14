@@ -22,7 +22,7 @@
 </div>
 <script>
   window.fbAsyncInit = function() {
-    FB.init({appId: '117628591626737', status: true, cookie: true,
+    FB.init({appId: '<%= Config::APP_ID.to_s %>', status: true, cookie: true,
              xfbml: true});
   };
   (function() {
