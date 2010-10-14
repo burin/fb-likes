@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'koala'
 require 'hashie'
-require "yaml"
+require 'yaml'
 
 module Config
   config = YAML.load(ERB.new(File.read("config/facebook.yml")).result)
