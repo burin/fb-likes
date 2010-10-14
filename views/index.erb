@@ -1,3 +1,4 @@
+<div class="index">
 <% if logged_in? %>
 	<h2>Awesome! Now Let's compare your &#147;likes&#148;</h2>
 	<a href="/friends" class="button">View your Friends to compare!</a>
@@ -6,3 +7,4 @@
 	<h2>Please log in to compare your &#147;likes&#148; with friends</h2>
 	<fb:login-button size="xlarge" length="long" autologoutlink="true" onlogin="window.location.reload()" perms="user_likes,friends_likes"></fb:login-button> 
 <% end %>
+</div>
