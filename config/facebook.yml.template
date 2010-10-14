@@ -1,3 +1,5 @@
  # config/facebook.yml
+ # deploying to heroku:
+ # heroku config:add FB_APP_ID=your_app_id FB_SECRET=your_app_secret
 app_id: your_app_id
 secret_key: your_app_secret
